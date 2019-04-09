@@ -1,13 +1,13 @@
 # EQ
-企业QQ（局域网版）
-通过Java Swing + Derby + 多线程 + Socket实现
+## 企业QQ（局域网版）<br>
+通过Java Swing + Derby + 多线程 + Socket实现<br>
 
-开发环境要求：
-  系统：windows10
-  环境：JDK1.8
-  工具：Eclipse Oxygen.3a Release
-  语言：Java
-  数据库：Derby
+开发环境要求：<br>
+>系统：windows10<br>
+>环境：JDK1.8<br>
+>工具：Eclipse Oxygen.3a Release<br>
+>语言：Java<br>
+>数据库：Derby<br>
 
 实现了
   Java数据库的应用
