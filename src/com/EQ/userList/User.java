@@ -6,7 +6,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 /**
- *ÓÃ»§Àà
+ *ç”¨æˆ·ç±»
  */
 public class User {
 	private String ip;
@@ -17,10 +17,10 @@ public class User {
 	private Icon iconImg = null;
 
 	/**
-	 * ¿Õ¹¹Ôì·½·¨
+	 * ç©ºæ„é€ æ–¹æ³•
 	 */
 	public User() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 	}
 
 	public User(String host, String ip) {
@@ -54,8 +54,8 @@ public class User {
 	}
 
 	/**
-	 * »ñÈ¡Í·ÏñÍ¼Æ¬
-	 * @return Í·ÏñÍ¼±êÍ·Ïñ
+	 * è·å–å¤´åƒå›¾ç‰‡
+	 * @return å¤´åƒå›¾æ ‡å¤´åƒ
 	 */
 	public Icon getIconImg() {
 		int faceNum = 1;

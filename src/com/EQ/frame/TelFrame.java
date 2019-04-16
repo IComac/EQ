@@ -21,7 +21,7 @@ import com.EQ.userList.ChatTree;
 import com.EQ.userList.User;
 
 /**
- * ÁÄÌì´°¿Ú
+ * èŠå¤©çª—å£
  *
  */
 
@@ -56,14 +56,14 @@ public class TelFrame extends JFrame {
 	private final String SHAKING = "c)3a^1]g0";
 
 	/**
-	 * ´ò¿ªÁÄÌì´°¿Ú
+	 * æ‰“å¼€èŠå¤©çª—å£
 	 * 
 	 * @param ssArg
-	 * 		-UDPÊı¾İ°ü
+	 * 		-UDPæ•°æ®åŒ…
 	 * @param dp
-	 * 		-UDPÌ×½Ó×Ö
+	 * 		-UDPå¥—æ¥å­—
 	 * @param treeArg
-	 * 		-ÓÃ»§Ê÷
+	 * 		-ç”¨æˆ·æ ‘
 	 * @return
 	 */
 	public static synchronized TelFrame getInstance(DatagramSocket ssArg,
@@ -88,14 +88,14 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ±¾Àà¹¹Ôì·½·¨
+	 * æœ¬ç±»æ„é€ æ–¹æ³•
 	 * 
 	 * @param ssArg
-	 * 		-UDPÊı¾İ°ü
+	 * 		-UDPæ•°æ®åŒ…
 	 * @param dpArg
-	 * 		-UDPÌ×½Ó×Ö
+	 * 		-UDPå¥—æ¥å­—
 	 * @param treeArg
-	 * 		-ÓÃ»§Ê÷
+	 * 		-ç”¨æˆ·æ ‘
 	 */
 	private TelFrame(DatagramSocket ssArg, DatagramPacket dpArg,
 			final ChatTree treeArg) {
@@ -118,7 +118,7 @@ public class TelFrame extends JFrame {
 			splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
 			splitPane.setLeftComponent(scrollPane);
 			scrollPane.setViewportView(receiveText);
-			receiveText.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+			receiveText.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
 			receiveText.setInheritsPopupMenu(true);
 			receiveText.setDragEnabled(true);
 			receiveText.setMargin(new Insets(0, 0, 0, 0));
@@ -150,12 +150,12 @@ public class TelFrame extends JFrame {
 			buttonPanel.add(sendButton);
 			sendButton.setMargin(new Insets(0, 14, 0, 14));
 			sendButton.addActionListener(new sendActionListener());
-			sendButton.setText("·¢ËÍ");
+			sendButton.setText("å‘é€");
 
 			buttonPanel.add(messageButton);
 			messageButton.setMargin(new Insets(0, 14, 0, 14));
 			messageButton.addActionListener(new MessageButtonActionListener());
-			messageButton.setText("ÏûÏ¢¼ÇÂ¼");
+			messageButton.setText("æ¶ˆæ¯è®°å½•");
 
 			JPanel toolbarPanel = new JPanel();
 			receiveTextPanel.add(toolbarPanel, BorderLayout.NORTH);
@@ -171,10 +171,10 @@ public class TelFrame extends JFrame {
 			ImageIcon toolbarFontIcon = new ImageIcon(EQ.class.getResource
 					("/image/telFrameImage/toolbarImage/ToolbarFont.png"));
 			toolFontButton.setIcon(toolbarFontIcon);
-			toolFaceButton.setToolTipText("ÉèÖÃ×ÖÌåÑÕÉ«ºÍ¸ñÊ½");
+			toolFaceButton.setToolTipText("è®¾ç½®å­—ä½“é¢œè‰²å’Œæ ¼å¼");
 			toolBar.add(toolFaceButton);
 			toolFaceButton.addActionListener(toolListener);
-			toolFaceButton.setToolTipText("Ñ¡Ôñ±íÇé");
+			toolFaceButton.setToolTipText("é€‰æ‹©è¡¨æƒ…");
 			toolFaceButton.setFocusPainted(false);
 			toolFaceButton.setMargin(new Insets(0, 0, 0, 0));
 
@@ -184,7 +184,7 @@ public class TelFrame extends JFrame {
 			toolBar.add(toolbarSendFile);
 
 			toolbarSendFile.addActionListener(toolListener);
-			toolbarSendFile.setToolTipText("·¢ËÍÎÄ¼ş");
+			toolbarSendFile.setToolTipText("å‘é€æ–‡ä»¶");
 			toolbarSendFile.setFocusPainted(false);
 			toolbarSendFile.setMargin(new Insets(0, 0, 0, 0));
 			ImageIcon toolbarPictureIcon = new ImageIcon(EQ.class.getResource
@@ -194,7 +194,7 @@ public class TelFrame extends JFrame {
 			toolBar.add(toolbarShakeFrame);
 			toolbarShakeFrame.setActionCommand("shaking");
 			toolbarShakeFrame.addActionListener(toolListener);
-			toolbarShakeFrame.setToolTipText("·¢ËÍ´°¿Ú¶¶¶¯");
+			toolbarShakeFrame.setToolTipText("å‘é€çª—å£æŠ–åŠ¨");
 			toolbarShakeFrame.setMargin(new Insets(0, 0, 0, 0));
 			ImageIcon toolbarShakeIcon = new ImageIcon(EQ.class.getResource
 					("/image/telFrameImage/toolbarImage/ToolbarShake.png"));
@@ -202,7 +202,7 @@ public class TelFrame extends JFrame {
 
 			toolbarCaptureScreen.setActionCommand("CaptureScreen");
 			toolbarCaptureScreen.addActionListener(toolListener);
-			toolbarCaptureScreen.setToolTipText("½ØÍ¼");
+			toolbarCaptureScreen.setToolTipText("æˆªå›¾");
 			toolbarCaptureScreen.setFocusPainted(false);
 			toolbarCaptureScreen.setMargin(new Insets(0, 0, 0, 0));
 			ImageIcon toolbarCaptureScreenIcon = new ImageIcon(EQ.class.getResource
@@ -225,7 +225,7 @@ public class TelFrame extends JFrame {
 			sendText.setInheritsPopupMenu(true);
 			sendText.addKeyListener(new SendTextKeyListener());
 			sendText.setVerifyInputWhenFocusTarget(false);
-			sendText.setFont(new Font("ËÎÌå",Font.PLAIN, 12));
+			sendText.setFont(new Font("å®‹ä½“",Font.PLAIN, 12));
 			sendText.setMargin(new Insets(0, 0, 0, 0));
 			sendText.setDragEnabled(true);
 			sendText.requestFocus();
@@ -243,9 +243,9 @@ public class TelFrame extends JFrame {
 			String imgPath = EQ.class.getResource("/image/telFrameImage/telUserInfo.png") + "";
 			otherSideInfo.setText("<html><body background='" + imgPath 
 					+ "'><table width='" + rightPanelWidth + "'>"
-					+ "<tr><td>ÓÃ»§Ãû: <br>&nbsp;&nbsp;" + user.getName() + "</td></tr>"
-					+ "<tr><td>Ö÷»úÃû: <br>&nbsp;&nbsp;" + user.getHost() + "</td></tr>"
-					+ "<tr><td>IPµØÖ·: <br>&nbsp;&nbsp;" + user.getIp() + "</td></tr>"
+					+ "<tr><td>ç”¨æˆ·å: <br>&nbsp;&nbsp;" + user.getName() + "</td></tr>"
+					+ "<tr><td>ä¸»æœºå: <br>&nbsp;&nbsp;" + user.getHost() + "</td></tr>"
+					+ "<tr><td>IPåœ°å€: <br>&nbsp;&nbsp;" + user.getIp() + "</td></tr>"
 					+ "<tr><td colspan='2' height=" + this.getHeight()*2 + "></td></tr>"
 					+ "</table></body></html>");
 			panel_3.add(label_1, BorderLayout.NORTH);
@@ -256,11 +256,11 @@ public class TelFrame extends JFrame {
 			e.printStackTrace();
 		}
 		setVisible(true);
-		setTitle("Óë [" + user +"]Í¨Ñ¶ÖĞ");
+		setTitle("ä¸ [" + user +"]é€šè®¯ä¸­");
 	}
 
 	/**
-	 * ÈÃ´°¿Ú¶¶¶¯
+	 * è®©çª—å£æŠ–åŠ¨
 	 */
 	private void shaking() {
 		int x = getX();
@@ -284,7 +284,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * »ñÈ¡ÁÄÌìÊı¾İ£¬²¢Ìí¼Óµ½ÁÄÌì¼ÇÂ¼Ãæ°åÖĞ
+	 * è·å–èŠå¤©æ•°æ®ï¼Œå¹¶æ·»åŠ åˆ°èŠå¤©è®°å½•é¢æ¿ä¸­
 	 * 
 	 */
 	private void receiveInfo() {
@@ -296,7 +296,7 @@ public class TelFrame extends JFrame {
 			info = info + " (" + sdf.format(new Date()) + ")";
 			appendReceiveText(info, Color.BLUE);
 			if (rText.equals(SHAKING)) {
-				appendReceiveText("[¶Ô·½·¢ËÍÒ»¸ö¶¶¶¯´°¿Ú]\n", Color.RED);
+				appendReceiveText("[å¯¹æ–¹å‘é€ä¸€ä¸ªæŠ–åŠ¨çª—å£]\n", Color.RED);
 				shaking();
 			}else {
 				appendReceiveText(rText + "\n", null);
@@ -307,7 +307,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ·¢ËÍ°´Å¥´¥·¢ÊÂ¼ş
+	 * å‘é€æŒ‰é’®è§¦å‘äº‹ä»¶
 	 * 
 	 */
 	class sendActionListener implements ActionListener{
@@ -339,7 +339,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ¹¦ÄÜÀ¸´¥·¢¼àÌı
+	 * åŠŸèƒ½æ è§¦å‘ç›‘å¬
 	 * 
 	 */
 	class ToolbarActionListener implements ActionListener{
@@ -348,24 +348,24 @@ public class TelFrame extends JFrame {
 			switch (command) {
 			case "shaking":
 				insertUserInfoToReceiveText();
-				appendReceiveText("[Äú·¢ËÍÁËÒ»¸ö¶¶¶¯´°¿Ú£¬3ÃëÖ®ºó¿ÉÔÙ´Î·¢ËÍ]\n", Color.GRAY);
-				ChatLog.writeLog(user.getIp(), "[·¢ËÍ´°¿Ú¶¶¶¯ÃüÁî]");
+				appendReceiveText("[æ‚¨å‘é€äº†ä¸€ä¸ªæŠ–åŠ¨çª—å£ï¼Œ3ç§’ä¹‹åå¯å†æ¬¡å‘é€]\n", Color.GRAY);
+				ChatLog.writeLog(user.getIp(), "[å‘é€çª—å£æŠ–åŠ¨å‘½ä»¤]");
 				sendShakeCommand(e);
 				break;
 			case "CaptureScreen":
 				new CaptureScreenUtil();
 				break;
 			default:
-				JOptionPane.showMessageDialog(TelFrame.this, "´Ë¹¦ÄÜÉĞÔÚ½¨ÉèÖĞ¡£");
+				JOptionPane.showMessageDialog(TelFrame.this, "æ­¤åŠŸèƒ½å°šåœ¨å»ºè®¾ä¸­ã€‚");
 			}
 		}
 	}
 
 	/**
-	 * ·¢ËÍ´°¿Ú¶¶¶¯Ö¸Áî
+	 * å‘é€çª—å£æŠ–åŠ¨æŒ‡ä»¤
 	 * 
 	 * @param e
-	 * 		-´¥·¢¶¶¶¯Ö¸ÁîµÄ×é¼ş
+	 * 		-è§¦å‘æŠ–åŠ¨æŒ‡ä»¤çš„ç»„ä»¶
 	 */
 	private void sendShakeCommand(ActionEvent e) {
 		Thread t = new Thread() {
@@ -396,7 +396,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ´°¿Ú¹Ø±ÕÊÂ¼ş
+	 * çª—å£å…³é—­äº‹ä»¶
 	 * 
 	 */
 	private final class TelFrameClosing extends WindowAdapter{
@@ -414,7 +414,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ÏûÏ¢¼ÇÂ¼°´Å¥¶¯×÷ÊÂ¼ş
+	 * æ¶ˆæ¯è®°å½•æŒ‰é’®åŠ¨ä½œäº‹ä»¶
 	 * 
 	 */
 	private class MessageButtonActionListener implements ActionListener{
@@ -424,7 +424,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ¿ì½İ¼ü¼üÅÌ¼àÌıÀà
+	 * å¿«æ·é”®é”®ç›˜ç›‘å¬ç±»
 	 */
 	private class SendTextKeyListener extends KeyAdapter{
 		public void keyPressed(KeyEvent e) {
@@ -435,7 +435,7 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * Òş²ØºÃÓÑĞÅÏ¢Ãæ°åÊÂ¼ş
+	 * éšè—å¥½å‹ä¿¡æ¯é¢æ¿äº‹ä»¶
 	 * 
 	 */
 	private class hideBtnActionListener implements ActionListener{
@@ -451,19 +451,19 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ÉèÖÃ´°¿Ú¶ÁÈ¡µÄÏûÏ¢Êı¾İ
+	 * è®¾ç½®çª—å£è¯»å–çš„æ¶ˆæ¯æ•°æ®
 	 * 
 	 * @param bufs
-	 * 		-ÏûÏ¢Êı¾İ
+	 * 		-æ¶ˆæ¯æ•°æ®
 	 */
 	public void setBufs(byte[] bufs) {
 		this.buf = bufs;
 	}
 
 	/**
-	 * »ñÈ¡Òª·¢ËÍµÄÏûÏ¢
+	 * è·å–è¦å‘é€çš„æ¶ˆæ¯
 	 * 
-	 * @return Òª·¢ËÍµÄÏûÏ¢
+	 * @return è¦å‘é€çš„æ¶ˆæ¯
 	 */
 	public String getSendInfo() {
 		String sendInfo = "";
@@ -475,14 +475,14 @@ public class TelFrame extends JFrame {
 			e.printStackTrace();
 		}
 		if (sendInfo.equals("")) {
-			JOptionPane.showMessageDialog(TelFrame.this, "²»ÄÜ·¢ËÍ¿ÕÏûÏ¢¡£");
+			JOptionPane.showMessageDialog(TelFrame.this, "ä¸èƒ½å‘é€ç©ºæ¶ˆæ¯ã€‚");
 			return null;
 		}
 		return sendInfo;
 	}
 
 	/**
-	 * ÁÄÌì¼ÇÂ¼´°¿Ú²åÈëµ±Ç°ÓÃ»§
+	 * èŠå¤©è®°å½•çª—å£æ’å…¥å½“å‰ç”¨æˆ·
 	 */
 	private void insertUserInfoToReceiveText() {
 		String info = null;
@@ -504,12 +504,12 @@ public class TelFrame extends JFrame {
 	}
 
 	/**
-	 * ÁÄÌì¼ÇÂ¼¿ò×·¼ÓÎÄ±¾
+	 * èŠå¤©è®°å½•æ¡†è¿½åŠ æ–‡æœ¬
 	 * 
 	 * @param sendInfo
-	 * 		-×·¼ÓÎÄ±¾ÄÚÈİ
+	 * 		-è¿½åŠ æ–‡æœ¬å†…å®¹
 	 * @param color
-	 * 		-ÎÄ±¾ÑÕÉ«
+	 * 		-æ–‡æœ¬é¢œè‰²
 	 */
 	public void appendReceiveText(String sendInfo, Color color) {
 		Style style = receiveText.addStyle("title", null);

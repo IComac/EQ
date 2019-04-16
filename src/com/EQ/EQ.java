@@ -99,8 +99,8 @@ public class EQ extends Dialog{
 
 	public static void main(String args[]) {
 		try {
-			String laf = preferences.get("lookAndFeel", "javaÄ¬ÈÏ");
-			if (laf.contains("µ±Ç°ÏµÍ³"))
+			String laf = preferences.get("lookAndFeel", "javaé»˜è®¤");
+			if (laf.contains("å½“å‰ç³»ç»Ÿ"))
 				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			EQ frame = new EQ();
 			frame.setVisible(true);
@@ -113,14 +113,14 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * Ö÷Àà¹¹Ôì·½·¨
+	 * ä¸»ç±»æ„é€ æ–¹æ³•
 	 */
 	public EQ(){
 		super(new Frame());
 		frame = this;
 		dao = Dao.getDao();
 		location = dao.getLocation();
-		setTitle("ÆóÒµQQ");
+		setTitle("ä¼ä¸šQQ");
 		setBounds(location);
 		progressBar = new JProgressBar();
 		progressBar.setBorder(new BevelBorder(BevelBorder.LOWERED));
@@ -143,7 +143,7 @@ public class EQ extends Dialog{
 		} catch (SocketException e2) {
 			// TODO: handle exception
 			if (e2.getMessage().startsWith("Address already in use")) {
-				JOptionPane.showMessageDialog(this, "·şÎñ¶Ë¿Ú±»Õ¼ÓÃ£¬»òÕß±¾Èí¼şÒÑ¾­ÔËĞĞ¡£");
+				JOptionPane.showMessageDialog(this, "æœåŠ¡ç«¯å£è¢«å ç”¨ï¼Œæˆ–è€…æœ¬è½¯ä»¶å·²ç»è¿è¡Œã€‚");
 			}
 			System.exit(0);
 		}
@@ -159,15 +159,15 @@ public class EQ extends Dialog{
 		tabbedPane.setTabPlacement(SwingConstants.LEFT);
 		ImageIcon userTicon = new ImageIcon(EQ.class.getResource
 				("/image/tabIcon/tabLeft.PNG"));
-		tabbedPane.addTab(null, userTicon, createUserList(), "ÓÃ»§ÁĞ±í");;
+		tabbedPane.addTab(null, userTicon, createUserList(), "ç”¨æˆ·åˆ—è¡¨");;
 		ImageIcon sysOTicon = new ImageIcon(EQ.class.getResource
 				("/image/tabIcon/tabLeft2.PNG"));
-		tabbedPane.addTab(null, sysOTicon, createSysToolPanel(), "ÏµÍ³²Ù×÷");
+		tabbedPane.addTab(null, sysOTicon, createSysToolPanel(), "ç³»ç»Ÿæ“ä½œ");
 		setAlwaysOnTop(true);
 	}
 
 	/**
-	 * ÓÃ»§ÁĞ±íÃæ°å
+	 * ç”¨æˆ·åˆ—è¡¨é¢æ¿
 	 * 
 	 * @return
 	 */
@@ -183,7 +183,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ÏµÍ³¹¤¾ßÃæ°å
+	 * ç³»ç»Ÿå·¥å…·é¢æ¿
 	 * 
 	 * @return
 	 */
@@ -200,23 +200,23 @@ public class EQ extends Dialog{
 		JPanel interfacePanel = new JPanel();
 		sysToolPanel.add(interfacePanel, BorderLayout.NORTH);
 		interfacePanel.setLayout(new BorderLayout());
-		interfacePanel.setBorder(new TitledBorder("½çÃæÑ¡Ôñ-ÔÙ´ÎÆô¶¯ÉúĞ§"));
-		faceList = new JList(new String[] {"µ±Ç°ÏµÍ³","javaÄ¬ÈÏ"});
+		interfacePanel.setBorder(new TitledBorder("ç•Œé¢é€‰æ‹©-å†æ¬¡å¯åŠ¨ç”Ÿæ•ˆ"));
+		faceList = new JList(new String[] {"å½“å‰ç³»ç»Ÿ","javaé»˜è®¤"});
 		interfacePanel.add(faceList);
 		faceList.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		final JPanel interfaceSubPanel = new JPanel();
 		interfaceSubPanel.setLayout(new FlowLayout());
 		interfacePanel.add(interfaceSubPanel, BorderLayout.SOUTH);
-		selectInterfaceOKButton = new JButton("È·¶¨");
+		selectInterfaceOKButton = new JButton("ç¡®å®š");
 		selectInterfaceOKButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				if (faceList.getSelectedValue() == null) {
 					JOptionPane.showMessageDialog(EQ.this, 
-							"ÄãÎ´Ñ¡ÖĞÈÎºÎÖ÷Ìâ", "ÌáÊ¾", JOptionPane.ERROR_MESSAGE);
+							"ä½ æœªé€‰ä¸­ä»»ä½•ä¸»é¢˜", "æç¤º", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				preferences.put("lookAndFeel", faceList.getSelectedValue().toString());
-				JOptionPane.showMessageDialog(EQ.this, "ÖØĞÂÔËĞĞ±¾Èí¼şºóÉúĞ§");
+				JOptionPane.showMessageDialog(EQ.this, "é‡æ–°è¿è¡Œæœ¬è½¯ä»¶åç”Ÿæ•ˆ");
 			}
 		});
 		interfaceSubPanel.add(selectInterfaceOKButton);
@@ -227,7 +227,7 @@ public class EQ extends Dialog{
 		final JPanel searchControlPanel = new JPanel();
 		searchControlPanel.setLayout(new GridLayout(0, 1));
 		searchUserPanel.add(searchControlPanel, BorderLayout.SOUTH);
-		final JList searchUserList = new JList(new String[] {"¼ì²âÓÃ»§ÁĞ±í"});
+		final JList searchUserList = new JList(new String[] {"æ£€æµ‹ç”¨æˆ·åˆ—è¡¨"});
 		final JScrollPane scrollPane_2 = new JScrollPane(searchUserList);
 		scrollPane_2.setDoubleBuffered(true);
 		searchUserPanel.add(scrollPane_2);
@@ -235,34 +235,34 @@ public class EQ extends Dialog{
 		searchUserButton = new JToggleButton();
 		searchControlPanel.add(progressBar);
 		searchControlPanel.add(searchUserButton);
-		searchUserPanel.setBorder(new TitledBorder("ËÑË÷ÓÃ»§"));
+		searchUserPanel.setBorder(new TitledBorder("æœç´¢ç”¨æˆ·"));
 
 		final JPanel ipPanel = new JPanel();
 		final GridLayout gridLayout_2 = new GridLayout(0, 1);
 		gridLayout_2.setVgap(5);
 		ipPanel.setLayout(gridLayout_2);
 		ipPanel.setMaximumSize(new Dimension(600, 90));
-		ipPanel.setBorder(new TitledBorder("IPËÑË÷·¶Î§"));
+		ipPanel.setBorder(new TitledBorder("IPæœç´¢èŒƒå›´"));
 		final JPanel panel_5 = new JPanel();
 		panel_5.setLayout(new BoxLayout(panel_5, BoxLayout.X_AXIS));
 		ipPanel.add(panel_5);
-		panel_5.add(new JLabel("ÆğÊ¼IP: "));
+		panel_5.add(new JLabel("èµ·å§‹IP: "));
 		ipStartTField = new JTextField("192.168.0.1");
 		panel_5.add(ipStartTField);
 		final JPanel panel_6 = new JPanel();
 		panel_6.setLayout(new BoxLayout(panel_6, BoxLayout.X_AXIS));
 		ipPanel.add(panel_6);
-		panel_6.add(new JLabel("ÖÕÖ¹IP: "));
+		panel_6.add(new JLabel("ç»ˆæ­¢IP: "));
 		ipEndTField = new JTextField("192.168.1.255");
 		panel_6.add(ipEndTField);
 		sysToolPanel.add(ipPanel, BorderLayout.SOUTH);
 
-		stateLabel.setText("×ÜÈËÊı: " + chatTree.getRowCount());
+		stateLabel.setText("æ€»äººæ•°: " + chatTree.getRowCount());
 		return sysToolScrollPanel;
 	}
 
 	/**
-	 * ³õÊ¼»¯ÓÃ»§ĞÅÏ¢°´Å¥
+	 * åˆå§‹åŒ–ç”¨æˆ·ä¿¡æ¯æŒ‰é’®
 	 */
 	private void initUserInfoButton() {
 		try {
@@ -280,7 +280,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ËÑË÷ÓÃ»§ÊÂ¼ş
+	 * æœç´¢ç”¨æˆ·äº‹ä»¶
 	 * 
 	 */
 	class SearchUserActionListener implements ActionListener{
@@ -297,7 +297,7 @@ public class EQ extends Dialog{
 			String ipEnd = ipEndTField.getText().trim();
 			if (ipStart.matches(regex) && ipEnd.matches(regex)) {
 				if (searchUserButton.isSelected()) {
-					searchUserButton.setText("Í£Ö¹ËÑË÷");
+					searchUserButton.setText("åœæ­¢æœç´¢");
 					new Thread(new Runnable() {
 						public void run(){
 							Resource.searchUsers
@@ -305,17 +305,17 @@ public class EQ extends Dialog{
 						}
 					}).start();
 				}else {
-					searchUserButton.setText("ËÑË÷ĞÂÓÃ»§");
+					searchUserButton.setText("æœç´¢æ–°ç”¨æˆ·");
 				}
 			}else {
-				JOptionPane.showMessageDialog(EQ.this, "Çë¼ì²éIPµØÖ·¸ñÊ½", "×¢Òâ", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(EQ.this, "è¯·æ£€æŸ¥IPåœ°å€æ ¼å¼", "æ³¨æ„", JOptionPane.WARNING_MESSAGE);
 				searchUserButton.setSelected(false);
 			}
 		}
 	}
 
 	/**
-	 * ÓÃ»§ÁĞ±íµÄ¼àÌıÆ÷
+	 * ç”¨æˆ·åˆ—è¡¨çš„ç›‘å¬å™¨
 	 * 
 	 * @author Administrator
 	 * 
@@ -341,12 +341,12 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * Æô¶¯·şÎñÆ÷
+	 * å¯åŠ¨æœåŠ¡å™¨
 	 */
 	private void server() {
 		new Thread(new Runnable() {
 			public void run() {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				while(true) {
 					if (ss != null) {
 						byte[] buf = new byte[4096];
@@ -365,12 +365,12 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ÓÒ¼üµ¯³ö²Ëµ¥Ìí¼ÓÓÃ»§
+	 * å³é”®å¼¹å‡ºèœå•æ·»åŠ ç”¨æˆ·
 	 * 
 	 * @param component
-	 * 		-´¥·¢ÓÒ¼üµÄ×é¼ş
+	 * 		-è§¦å‘å³é”®çš„ç»„ä»¶
 	 * @param popup
-	 * 		-µ¯³öÊ½²Ëµ¥
+	 * 		-å¼¹å‡ºå¼èœå•
 	 */
 	private void addUserPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
@@ -381,7 +381,7 @@ public class EQ extends Dialog{
 			}
 
 			/**
-			 * Õ¹Ê¾ÓÒ¼ü²Ëµ¥À¸
+			 * å±•ç¤ºå³é”®èœå•æ 
 			 */
 			private void showMenu(MouseEvent e) {
 				if (chatTree.getSelectionPaths() == null) {
@@ -405,7 +405,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ±£´æÖ÷´°¿ÚÎ»ÖÃµÄ·½·¨
+	 * ä¿å­˜ä¸»çª—å£ä½ç½®çš„æ–¹æ³•
 	 */
 	private void saveLocation() {
 		location = getBounds();
@@ -413,7 +413,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ´´½¨ÓÒ¼üµ¯³ö²Ëµ¥
+	 * åˆ›å»ºå³é”®å¼¹å‡ºèœå•
 	 * 
 	 * @return
 	 */
@@ -425,20 +425,20 @@ public class EQ extends Dialog{
 		final JMenuItem rename = new JMenuItem();
 		popupMenu.add(rename);
 		rename.addActionListener(new RenameActionListener());
-		rename.setText("¸üÃû");
+		rename.setText("æ›´å");
 		final JMenuItem addUser = new JMenuItem();
 		addUser.addActionListener(new AddUserActionListener());
 		popupMenu.add(addUser);
-		addUser.setText("Ìí¼ÓÓÃ»§");
+		addUser.setText("æ·»åŠ ç”¨æˆ·");
 		final JMenuItem delUser = new JMenuItem();
 		delUser.addActionListener(new delUserActionListener());
 		popupMenu.add(delUser);
-		delUser.setText("É¾³ıÓÃ»§");
+		delUser.setText("åˆ é™¤ç”¨æˆ·");
 		final JMenuItem messagerGroupSend = new JMenuItem();
 		messagerGroupSend.addActionListener(new messagerGroupSendActionListener());
-		messagerGroupSend.setText("ĞÅÊ¹Èº·¢");
+		messagerGroupSend.setText("ä¿¡ä½¿ç¾¤å‘");
 		popupMenu.add(messagerGroupSend);
-		final JMenuItem accessComputerFolder = new JMenuItem("·ÃÎÊÖ÷»ú×ÊÔ´");
+		final JMenuItem accessComputerFolder = new JMenuItem("è®¿é—®ä¸»æœºèµ„æº");
 		accessComputerFolder.setActionCommand("computer");
 		popupMenu.add(accessComputerFolder);
 		accessComputerFolder.addActionListener(new accessFolderActionListener());
@@ -446,7 +446,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ÉèÖÃ×´Ì¬À¸ĞÅÏ¢
+	 * è®¾ç½®çŠ¶æ€æ ä¿¡æ¯
 	 * 
 	 * @param str
 	 */
@@ -457,20 +457,20 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ÏÔÊ¾¸üÃû¶Ô»°¿ò
+	 * æ˜¾ç¤ºæ›´åå¯¹è¯æ¡†
 	 * 
 	 * @param str
-	 * 		-¾ÉÃû×Ö
-	 * @param ĞÂÃû×Ö
+	 * 		-æ—§åå­—
+	 * @param æ–°åå­—
 	 */
 	private String showInputDialog(String str) {
-		String newName = JOptionPane.showInputDialog(this, "<html>ÊäÈë<font color=red>"
-				+ str + "</font>µÄĞÂÃû×Ö</html>");
+		String newName = JOptionPane.showInputDialog(this, "<html>è¾“å…¥<font color=red>"
+				+ str + "</font>çš„æ–°åå­—</html>");
 		return newName;
 	}
 
 	/**
-	 * ·ÃÎÊ¶Ô·½¹²Ïí×ÊÔ´ÎÄ¼ş¼Ğ
+	 * è®¿é—®å¯¹æ–¹å…±äº«èµ„æºæ–‡ä»¶å¤¹
 	 * 
 	 */
 	private class accessFolderActionListener implements ActionListener{
@@ -490,7 +490,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ¸ü¸ÄÓÃ»§ÃûÊÂ¼ş
+	 * æ›´æ”¹ç”¨æˆ·åäº‹ä»¶
 	 * 
 	 */
 	private class RenameActionListener implements ActionListener{
@@ -514,7 +514,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ´°¿Ú¹Ø±ÕÊÂ¼ş
+	 * çª—å£å…³é—­äº‹ä»¶
 	 * 
 	 */
 	private class FrameWindowListener extends WindowAdapter{
@@ -524,12 +524,12 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * Ìí¼ÓÓÃ»§¶¯×÷ÊÂ¼ş
+	 * æ·»åŠ ç”¨æˆ·åŠ¨ä½œäº‹ä»¶
 	 * 
 	 */
 	private class AddUserActionListener implements ActionListener{
 		public void actionPerformed(final ActionEvent e) {
-			String ip = JOptionPane.showInputDialog(EQ.this, "ÊäÈëĞÂÓÃ»§IPµØÖ·");
+			String ip = JOptionPane.showInputDialog(EQ.this, "è¾“å…¥æ–°ç”¨æˆ·IPåœ°å€");
 			if (ip != null) {
 				chatTree.addUser(ip, "add");
 			}
@@ -537,7 +537,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * É¾³ıÓÃ»§¶¯×÷ÊÂ¼ş
+	 * åˆ é™¤ç”¨æˆ·åŠ¨ä½œäº‹ä»¶
 	 * 
 	 */
 	private class delUserActionListener implements ActionListener{
@@ -547,36 +547,36 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * Èº·¢ÏûÏ¢¶¯×÷ÊÂ¼ş
+	 * ç¾¤å‘æ¶ˆæ¯åŠ¨ä½œäº‹ä»¶
 	 * 
 	 */
 	private class messagerGroupSendActionListener implements ActionListener{
 		public void actionPerformed(final ActionEvent e) {
 			String systemName = System.getProperty("os.name");
 			if (systemName != null && systemName.equals("Windows 7")) {
-				String message = JOptionPane.showInputDialog(EQ.this, "ÇëÊäÈëÈº·¢ÏûÏ¢", "ĞÅÊ¹Èº·¢", JOptionPane.INFORMATION_MESSAGE);
+				String message = JOptionPane.showInputDialog(EQ.this, "è¯·è¾“å…¥ç¾¤å‘æ¶ˆæ¯", "ä¿¡ä½¿ç¾¤å‘", JOptionPane.INFORMATION_MESSAGE);
 				if (message != null && !message.equals("")) {
 					TreePath[] selectionPaths = chatTree.getSelectionPaths();
 					Resource.sendGroupMessenger(ss, selectionPaths, message);
 				}else if (message != null && message.isEmpty()) {
-					JOptionPane.showMessageDialog(EQ.this, "²»ÄÜ·¢ËÍ¿ÕÏûÏ¢");
+					JOptionPane.showMessageDialog(EQ.this, "ä¸èƒ½å‘é€ç©ºæ¶ˆæ¯");
 				}
 			}else {
-				JOptionPane.showMessageDialog(EQ.this, "´Ë¹¦ÄÜÖ»ÄÜÔÚWindows7»·¾³Ê¹ÓÃ!", "ÌáÊ¾", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(EQ.this, "æ­¤åŠŸèƒ½åªèƒ½åœ¨Windows7ç¯å¢ƒä½¿ç”¨!", "æç¤º", JOptionPane.WARNING_MESSAGE);
 			}
 		}
 	}
 
 	/**
-	 * ÏµÍ³À¸³õÊ¼»¯
+	 * ç³»ç»Ÿæ åˆå§‹åŒ–
 	 */
 	private void SystemTrayInitial() {
 		if (!SystemTray.isSupported()) {
 			return;
 		}
 		try {
-			String title = "ÆóÒµQQ";
-			String company = "ËÄ´¨Ê¡XXXÓĞÏŞ¹«Ë¾";
+			String title = "ä¼ä¸šQQ";
+			String company = "å››å·çœXXXæœ‰é™å…¬å¸";
 			SystemTray sysTray = SystemTray.getSystemTray();
 			Image image = Toolkit.getDefaultToolkit().getImage
 					(EQ.class.getResource("/icons/sysTray.png"));
@@ -592,22 +592,22 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ´´½¨×îĞ¡»¯²Ëµ¥À¸
+	 * åˆ›å»ºæœ€å°åŒ–èœå•æ 
 	 * 
 	 * @return
 	 */
 	private PopupMenu createMenu() {
 		PopupMenu menu = new PopupMenu();
-		MenuItem exitltem = new MenuItem("ÍË³ö");
+		MenuItem exitltem = new MenuItem("é€€å‡º");
 		exitltem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		MenuItem openItem = new MenuItem("´ò¿ª");
+		MenuItem openItem = new MenuItem("æ‰“å¼€");
 		openItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				if (!isVisible()) {
 					setVisible(true);
 					toFront();
@@ -623,7 +623,7 @@ public class EQ extends Dialog{
 	}
 
 	/**
-	 * ×îĞ¡»¯ÏµÍ³À¸Ë«»÷ÊÂ¼ş
+	 * æœ€å°åŒ–ç³»ç»Ÿæ åŒå‡»äº‹ä»¶
 	 * 
 	 */
 	class SysTrayActionListener implements ActionListener{
@@ -633,5 +633,3 @@ public class EQ extends Dialog{
 		}
 	}
 }
-
-

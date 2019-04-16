@@ -18,7 +18,7 @@ import com.EQ.EQ;
 import com.EQ.dao.Dao;
 
 /**
- * ÓÃ»§Ê÷
+ * ç”¨æˆ·æ ‘
  * @author Administration
  *
  */
@@ -51,12 +51,12 @@ public class ChatTree extends JTree {
 	}
 
 	/**
-	 * ÅÅĞòÓÃ»§ÁĞ±í
+	 * æ’åºç”¨æˆ·åˆ—è¡¨
 	 */
 	private synchronized void sortUsers() {
 		new Thread(new Runnable() {
 			public void run() {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				try {
 					Thread.sleep(100);
 					root.removeAllChildren();
@@ -78,7 +78,7 @@ public class ChatTree extends JTree {
 					treeModel.reload();
 					ChatTree.this.setSelectionRow(0);
 					if (eq != null) {
-						eq.setStatic("×ÜÈËÊı: " + getRowCount());
+						eq.setStatic("æ€»äººæ•°: " + getRowCount());
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -89,7 +89,7 @@ public class ChatTree extends JTree {
 	}
 
 	/**
-	 * É¾³ıÓÃ»§
+	 * åˆ é™¤ç”¨æˆ·
 	 */
 	public void delUser() {
 		TreePath path = getSelectionPath();
@@ -98,8 +98,8 @@ public class ChatTree extends JTree {
 		}
 		User user = (User)((DefaultMutableTreeNode)path
 				.getLastPathComponent()).getUserObject();
-		int operation = JOptionPane.showConfirmDialog(this, "È·¶¨ÒªÉ¾³ıÓÃ»§: " + user
-				+ "?", "É¾³ıÓÃ»§", JOptionPane.YES_NO_OPTION,
+		int operation = JOptionPane.showConfirmDialog(this, "ç¡®å®šè¦åˆ é™¤ç”¨æˆ·: " + user
+				+ "?", "åˆ é™¤ç”¨æˆ·", JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE);
 		if (operation == JOptionPane.YES_OPTION) {
 			dao.delUser(user);
@@ -109,13 +109,13 @@ public class ChatTree extends JTree {
 	}
 
 	/**
-	 * Ìí¼ÓÓÃ»§
+	 * æ·»åŠ ç”¨æˆ·
 	 * 
 	 * @param ip
-	 * 		-ÓÃ»§IP
+	 * 		-ç”¨æˆ·IP
 	 * @param operation
-	 * 		-µ÷ÓÃ´Ë·½·¨µÄÊôÓÚÄÇÖÖÒµÎñ
-	 * @return -ÊÇ·ñÌí¼Ó³É¹¦
+	 * 		-è°ƒç”¨æ­¤æ–¹æ³•çš„å±äºé‚£ç§ä¸šåŠ¡
+	 * @return -æ˜¯å¦æ·»åŠ æˆåŠŸ
 	 */
 	public boolean addUser(String ip, String operation) {
 		try {
@@ -137,18 +137,18 @@ public class ChatTree extends JTree {
 					dao.addUser(newUser);
 					sortUsers();
 					if (!operation.equals("search")) {
-						JOptionPane.showMessageDialog(EQ.frame, "ÓÃ»§" + host + "Ìí¼Ó³É¹¦", "Ìí¼ÓÓÃ»§", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(EQ.frame, "ç”¨æˆ·" + host + "æ·»åŠ æˆåŠŸ", "æ·»åŠ ç”¨æˆ·", JOptionPane.INFORMATION_MESSAGE);
 					}
 					return true;
 				}else {
 					if (!operation.equals("search")) {
-						JOptionPane.showMessageDialog(EQ.frame, "¼ì²â²»µ½ÓÃ»§IP: " + ip, "´íÎóÌí¼ÓÓÃ»§", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(EQ.frame, "æ£€æµ‹ä¸åˆ°ç”¨æˆ·IP: " + ip, "é”™è¯¯æ·»åŠ ç”¨æˆ·", JOptionPane.ERROR_MESSAGE);
 					}
 					return false;
 				}
 			}else {
 				if (!operation.equals("search")) {
-					JOptionPane.showMessageDialog(EQ.frame, "ÒÑ¾­´æÔÚÓÃ»§IP" + ip, "²»ÄÜÌí¼ÓÓÃ»§",JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(EQ.frame, "å·²ç»å­˜åœ¨ç”¨æˆ·IP" + ip, "ä¸èƒ½æ·»åŠ ç”¨æˆ·",JOptionPane.WARNING_MESSAGE);
 				}
 				return false;
 			}
@@ -160,16 +160,16 @@ public class ChatTree extends JTree {
 	}
 
 	/**
-	 * »ñÈ¡ÓÃ»§Ê÷½ÚµãÊı¾İÄ£ĞÍ
+	 * è·å–ç”¨æˆ·æ ‘èŠ‚ç‚¹æ•°æ®æ¨¡å‹
 	 * 
-	 * @return ÓÃ»§Ê÷½ÚµãÊı¾İÄ£ĞÍ
+	 * @return ç”¨æˆ·æ ‘èŠ‚ç‚¹æ•°æ®æ¨¡å‹
 	 */
 	public DefaultTreeModel getTreeModel() {
 		return treeModel;
 	}
 
 	/**
-	 * ×Ô¶¨ÒåÊó±ê¼àÌıÊÂ¼ş
+	 * è‡ªå®šä¹‰é¼ æ ‡ç›‘å¬äº‹ä»¶
 	 * 
 	 */
 	private class ThisMouseListener extends MouseAdapter{

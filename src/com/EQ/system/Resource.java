@@ -30,20 +30,20 @@ import com.EQ.userList.User;
  */
 public class Resource {
 	/**
-	 * ËÑË÷ÓÃ»§
+	 * æœç´¢ç”¨æˆ·
 	 * 
 	 * @param tree
-	 * 		-ÓÃ»§Ê÷
+	 * 		-ç”¨æˆ·æ ‘
 	 * @param progressBar
-	 * 		-½ø¶ÈÌõ
+	 * 		-è¿›åº¦æ¡
 	 * @param list
-	 * 		-ĞÂÌí¼ÓÓÃ»§ÁĞ±í
+	 * 		-æ–°æ·»åŠ ç”¨æˆ·åˆ—è¡¨
 	 * @param button
-	 * 		-µã»÷ËÑË÷µÄ°´Å¥
+	 * 		-ç‚¹å‡»æœç´¢çš„æŒ‰é’®
 	 * @param ipStart
-	 * 		-¿ªÊ¼IPµØÖ·
+	 * 		-å¼€å§‹IPåœ°å€
 	 * @param ipEnd
-	 * 		-½áÊøIPµØÖ·
+	 * 		-ç»“æŸIPåœ°å€
 	 * 
 	 */
 	public static void searchUsers(ChatTree tree, JProgressBar progressBar,
@@ -59,7 +59,7 @@ public class Resource {
 		progressBar.setIndeterminate(true);
 		progressBar.setStringPainted(true);
 		DefaultListModel model = new DefaultListModel();
-		model.addElement("ËÑË÷½á¹û:");
+		model.addElement("æœç´¢ç»“æœ:");
 		list.setModel(model);
 		try {
 			int a = ipsInt[0], b = ipsInt[1], c = ipsInt[2], d = ipsInt[3];
@@ -73,9 +73,9 @@ public class Resource {
 							}
 							Thread.sleep(100);
 							String ip = a + "." + b + "." + c + "." + d;
-							progressBar.setString("ÕıÔÚËÑË÷£º" + ip);
+							progressBar.setString("æ­£åœ¨æœç´¢ï¼š" + ip);
 							if (tree.addUser(ip, "search")) {
-								model.addElement("<html><b><font color=green>Ìí¼Ó"
+								model.addElement("<html><b><font color=green>æ·»åŠ "
 										+ ip + "</font></b></html>");
 							}
 							if (a == ipeInt[0] && b == ipeInt[1] && c == ipeInt[2] && d == ipeInt[3]) {
@@ -106,21 +106,21 @@ public class Resource {
 			e.printStackTrace();
 		}finally {
 			progressBar.setIndeterminate(false);
-			progressBar.setString("ËÑË÷Íê±Ï");
-			button.setText("ËÑË÷ĞÂÓÃ»§");
+			progressBar.setString("æœç´¢å®Œæ¯•");
+			button.setText("æœç´¢æ–°ç”¨æˆ·");
 			button.setSelected(false);
 		}
 	}
 
 	/**
-	 * ÏûÏ¢Èº·¢¡£´Ë¹¦ÄÜ¿ÉÒÔÈº·¢Í¨Öª£¬Ã¿Ò»¸öÊÕµ½ÏûÏ¢µÄÓÃ»§¶¼»áµ¯³öÁÄÌì»á»°¿ò²¢Õ¹Ê¾Èº·¢µÄÏûÏ¢
+	 * æ¶ˆæ¯ç¾¤å‘ã€‚æ­¤åŠŸèƒ½å¯ä»¥ç¾¤å‘é€šçŸ¥ï¼Œæ¯ä¸€ä¸ªæ”¶åˆ°æ¶ˆæ¯çš„ç”¨æˆ·éƒ½ä¼šå¼¹å‡ºèŠå¤©ä¼šè¯æ¡†å¹¶å±•ç¤ºç¾¤å‘çš„æ¶ˆæ¯
 	 * 
 	 * @param ss
-	 * 		-UDPÌ×½Ó×Ö
+	 * 		-UDPå¥—æ¥å­—
 	 * @param selectionPaths
-	 * 		-±»Ñ¡ÖĞµÄÓÃ»§½áµãÂ·¾¢
+	 * 		-è¢«é€‰ä¸­çš„ç”¨æˆ·ç»“ç‚¹è·¯åŠ²
 	 * @param message
-	 * 		-Èº·¢µÄÏûÏ¢
+	 * 		-ç¾¤å‘çš„æ¶ˆæ¯
 	 */
 	public static void sendGroupMessenger(final DatagramSocket ss, 
 			final TreePath[] selectionPaths, final String message) {
@@ -133,23 +133,23 @@ public class Resource {
 						DefaultMutableTreeNode node = (DefaultMutableTreeNode) path
 								.getLastPathComponent();
 						User user = (User)node.getUserObject();
-						messageFrame.setStateBarInfo("<html>ÕıÔÚ¸ø<font color=bule>"
+						messageFrame.setStateBarInfo("<html>æ­£åœ¨ç»™<font color=bule>"
 								+ user.getName()
-								+ "</font>·¢ËÍÏûÏ¢......</html>");
+								+ "</font>å‘é€æ¶ˆæ¯......</html>");
 						Thread.sleep(20);
 						byte[] strData = message.getBytes();
 						InetAddress toAddress = InetAddress.getByName(user.getIp());
 						DatagramPacket tdp = null;
 						tdp = new DatagramPacket(strData, strData.length, toAddress, 1111);
 						ss.send(tdp);
-						messageFrame.addMessage(user.getName() + "·¢ËÍÍê±Ï£¡", true);
+						messageFrame.addMessage(user.getName() + "å‘é€å®Œæ¯•ï¼", true);
 						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 						String title = user.getName() + " ("
 								+ sdf.format(new Date()) + ")";
 						ChatLog.writeLog(user.getIp(), title);
-						ChatLog.writeLog(user.getIp(), "[Èº·¢ÄÚÈİ]" + message);
+						ChatLog.writeLog(user.getIp(), "[ç¾¤å‘å†…å®¹]" + message);
 					}
-					messageFrame.setStateBarInfo("ÏûÏ¢·¢ËÍÍê±Ï£¬¿ÉÒÔ¹Ø±Õ´°¿Ú¡£");
+					messageFrame.setStateBarInfo("æ¶ˆæ¯å‘é€å®Œæ¯•ï¼Œå¯ä»¥å…³é—­çª—å£ã€‚");
 				} catch (UnknownHostException e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -165,10 +165,10 @@ public class Resource {
 	}
 
 	/**
-	 * ´ò¿ª¶Ô·½¹²ÏíÎÄ¼ş¼Ğ
+	 * æ‰“å¼€å¯¹æ–¹å…±äº«æ–‡ä»¶å¤¹
 	 * 
 	 * @param str
-	 * 		¶Ô·½IP
+	 * 		å¯¹æ–¹IP
 	 */
 	public static void startFolder(String str) {
 		try {
@@ -180,4 +180,3 @@ public class Resource {
 	}
 
 }
-

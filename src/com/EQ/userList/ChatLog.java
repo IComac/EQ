@@ -14,9 +14,9 @@ import java.util.List;
 public class ChatLog {
 
 	/**
-	 * ¼ÇÂ¼ÁÄÌìÈÕÖ¾
-	 * @param userIP ¶Ô·½IPµØÖ·
-	 * @param message ¼ÇÂ¼µÄÏûÏ¢
+	 * è®°å½•èŠå¤©æ—¥å¿—
+	 * @param userIP å¯¹æ–¹IPåœ°å€
+	 * @param message è®°å½•çš„æ¶ˆæ¯
 	 */
 	static public void writeLog(String userIP, String message) {
 		File rootdir = new File("db_EQ/chatdata/");
@@ -30,7 +30,7 @@ public class ChatLog {
 			} catch (IOException e) {
 				// TODO: handle exception
 				e.printStackTrace();
-				System.out.println("ÁÄÌì¼ÇÂ¼ÎÄ¼şÎŞ·¨´´½¨£º " + 
+				System.out.println("èŠå¤©è®°å½•æ–‡ä»¶æ— æ³•åˆ›å»ºï¼š " + 
 						log.getAbsolutePath());
 			}
 		}
@@ -50,9 +50,9 @@ public class ChatLog {
 	}
 
 	/**
-	 * ¶ÁÈ¡ÁÄÌì¼ÇÂ¼
-	 * @param userIP ¶ÁÈ¡ÓëÄÄÒ»¸öIPÏà¹ØµÄÁÄÌì¼ÇÂ¼
-	 * @return -ÁÄÌì¼ÇÂ¼¼¯ºÏ
+	 * è¯»å–èŠå¤©è®°å½•
+	 * @param userIP è¯»å–ä¸å“ªä¸€ä¸ªIPç›¸å…³çš„èŠå¤©è®°å½•
+	 * @return -èŠå¤©è®°å½•é›†åˆ
 	 */
 	static public List<String> readAllLog(String userIP){
 		List<String> logs = new LinkedList<String>();

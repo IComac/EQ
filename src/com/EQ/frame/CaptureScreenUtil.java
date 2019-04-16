@@ -40,8 +40,8 @@ import javax.swing.filechooser.FileSystemView;
 import com.EQ.EQ;
 
 /**
- * ½ØÍ¼¹¤¾ßÀà£¬´ËÀà±¾ÉíÊÇÒ»¸öJWindow´°Ìå£¬´°Ìå»á¸²¸ÇÕû¸öÆÁÄ»£¬
- * ¸²¸ÇÖ®Ç°»á²¶»ñµ±ÆÚ×ÀÃæµÄÓ°ÏìÍ¼Æ¬£¬µ«ËùÓĞµÄ²Ù×÷ÆäÊµÊÇÔÚ´Ë´°ÌåÉÏµÄ
+ * æˆªå›¾å·¥å…·ç±»ï¼Œæ­¤ç±»æœ¬èº«æ˜¯ä¸€ä¸ªJWindowçª—ä½“ï¼Œçª—ä½“ä¼šè¦†ç›–æ•´ä¸ªå±å¹•ï¼Œ
+ * è¦†ç›–ä¹‹å‰ä¼šæ•è·å½“æœŸæ¡Œé¢çš„å½±å“å›¾ç‰‡ï¼Œä½†æ‰€æœ‰çš„æ“ä½œå…¶å®æ˜¯åœ¨æ­¤çª—ä½“ä¸Šçš„
  * @author IComac
  *
  */
@@ -69,19 +69,19 @@ public class CaptureScreenUtil extends JWindow{
 		} catch (AWTException e) {
 			// TODO: handle exception
 				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, "½ØÍ¼¹¦ÄÜÎŞ·¨Ê¹ÓÃ", "´íÎó", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "æˆªå›¾åŠŸèƒ½æ— æ³•ä½¿ç”¨", "é”™è¯¯", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	
 	/**
-	 * Ìí¼Ó¶¯×÷¼àÌı
+	 * æ·»åŠ åŠ¨ä½œç›‘å¬
 	 */
 	private void addAction() {
-		//½ØÍ¼´°ÌåÌí¼ÓÊó±êÊÂ¼ş¼àÌı
+		//æˆªå›¾çª—ä½“æ·»åŠ é¼ æ ‡äº‹ä»¶ç›‘å¬
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				startX = e.getX();
 				startY = e.getY();
 				
@@ -101,7 +101,7 @@ public class CaptureScreenUtil extends JWindow{
 				toolWindow.toFront();
 			}
 		});
-		//½ØÍ¼´°ÌåÌí¼ÓÊó±êÍÏ×§ÊÂ¼ş¼àÌı
+		//æˆªå›¾çª—ä½“æ·»åŠ é¼ æ ‡æ‹–æ‹½äº‹ä»¶ç›‘å¬
 		addMouseMotionListener(new MouseMotionAdapter() {
 			public void mouseDragged(MouseEvent e) {
 				endX = e.getX();
@@ -123,7 +123,7 @@ public class CaptureScreenUtil extends JWindow{
 	}
 	
 	/**
-	 * »æÖÆ×é¼ş
+	 * ç»˜åˆ¶ç»„ä»¶
 	 */
 	public void paint(Graphics g) {
 		RescaleOp ro = new RescaleOp(0.5f, 0, null);
@@ -132,11 +132,11 @@ public class CaptureScreenUtil extends JWindow{
 	}
 	
 	/**
-	 * ½«µ±Ç°½ØÍ¼±£´æµ½±¾µØ
+	 * å°†å½“å‰æˆªå›¾ä¿å­˜åˆ°æœ¬åœ°
 	 */
 	public void saveImage() {
 		JFileChooser jfc = new JFileChooser();
-		jfc.setDialogTitle("±£´æÍ¼Æ¬");
+		jfc.setDialogTitle("ä¿å­˜å›¾ç‰‡");
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG", "jpg");
 		jfc.setFileFilter(filter);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyymmddHHmmss");
@@ -152,7 +152,7 @@ public class CaptureScreenUtil extends JWindow{
 			} catch (IOException e) {
 				// TODO: handle exception
 				e.printStackTrace();
-				JOptionPane.showMessageDialog(this, "ÎÄ¼şÎŞ·¨±£´æ", "´íÎó", JOptionPane.ERROR);
+				JOptionPane.showMessageDialog(this, "æ–‡ä»¶æ— æ³•ä¿å­˜", "é”™è¯¯", JOptionPane.ERROR);
 			} finally {
 				disposeAll();
 			}
@@ -160,14 +160,14 @@ public class CaptureScreenUtil extends JWindow{
 	}
 	
 	/**
-	 * °Ñ½ØÍ¼·ÅÈë¼ôÇĞ°å
+	 * æŠŠæˆªå›¾æ”¾å…¥å‰ªåˆ‡æ¿
 	 */
 	private void imagetoClipboard() {
-		//´´½¨´«Êä½Ó¿ÚµÄ¶ÔÏó£¬Ê¹ÓÃ½Ó¿Ú±¾Éí´´½¨ÄÚ²¿Àà
+		//åˆ›å»ºä¼ è¾“æ¥å£çš„å¯¹è±¡ï¼Œä½¿ç”¨æ¥å£æœ¬èº«åˆ›å»ºå†…éƒ¨ç±»
 		Transferable trans = new Transferable() {
 			@Override
 			/**
-			 * ·µ»Ø½«Òª±»´«ÊäµÄ¶ÔÏóµÄÊı¾İÌØÕ÷Êı×é
+			 * è¿”å›å°†è¦è¢«ä¼ è¾“çš„å¯¹è±¡çš„æ•°æ®ç‰¹å¾æ•°ç»„
 			 */
 			public DataFlavor[] getTransferDataFlavors() {
 				return new DataFlavor[]{DataFlavor.imageFlavor};
@@ -175,7 +175,7 @@ public class CaptureScreenUtil extends JWindow{
 			
 			@Override
 			/**
-			 * ÅĞ¶Ï²ÎÊı´«ÈëµÄÌØÕ÷ÊÇ·ñ·ûºÏÎÒÃÇÒªÇóµÄÌØÕ÷
+			 * åˆ¤æ–­å‚æ•°ä¼ å…¥çš„ç‰¹å¾æ˜¯å¦ç¬¦åˆæˆ‘ä»¬è¦æ±‚çš„ç‰¹å¾
 			 */
 			public boolean isDataFlavorSupported(DataFlavor flavor) {
 				return DataFlavor.imageFlavor.equals(flavor);
@@ -183,7 +183,7 @@ public class CaptureScreenUtil extends JWindow{
 			
 			@Override
 			/**
-			 * ·µ»Ø½«Òª±»´«ÊäµÄ¶ÔÏó
+			 * è¿”å›å°†è¦è¢«ä¼ è¾“çš„å¯¹è±¡
 			 */
 			public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException{
 				if (isDataFlavorSupported(flavor)) {
@@ -197,16 +197,16 @@ public class CaptureScreenUtil extends JWindow{
 	}
 	
 	/**
-	 * ¹¤¾ßÀ¸´°Ìå
+	 * å·¥å…·æ çª—ä½“
 	 */
 	private class ToolsWindow extends JWindow{
 		/**
-		 * ¹¤¾ßÀ¸´°Ìå¹¹Ôì·½·¨
+		 * å·¥å…·æ çª—ä½“æ„é€ æ–¹æ³•
 		 * 
 		 * @param x
-		 * 		-¹¤¾ßÀ¸ÏÔÊ¾µÄºá×ø±ê
+		 * 		-å·¥å…·æ æ˜¾ç¤ºçš„æ¨ªåæ ‡
 		 * @param y
-		 * 		-¹¤¾ßÀ¸ÏÔÊ¾µÄ×İ×ø±ê
+		 * 		-å·¥å…·æ æ˜¾ç¤ºçš„çºµåæ ‡
 		 */
 		public ToolsWindow(int x, int y) {
 			setLocation(x, y);
@@ -220,7 +220,7 @@ public class CaptureScreenUtil extends JWindow{
 			saveButton.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+					// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 					saveImage();
 				}
 			});
@@ -231,7 +231,7 @@ public class CaptureScreenUtil extends JWindow{
 			closeButton.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+					// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 					disposeAll();
 				}
 			});
@@ -242,7 +242,7 @@ public class CaptureScreenUtil extends JWindow{
 			copyButton.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+					// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 					imagetoClipboard();
 					disposeAll();
 				}
@@ -256,7 +256,7 @@ public class CaptureScreenUtil extends JWindow{
 	}
 	
 	/**
-	 * Ïú»ÙËùÓĞ½ØÍ¼´°Ìå
+	 * é”€æ¯æ‰€æœ‰æˆªå›¾çª—ä½“
 	 */
 	public void disposeAll() {
 		toolWindow.dispose();

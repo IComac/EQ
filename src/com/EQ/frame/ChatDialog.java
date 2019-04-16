@@ -15,17 +15,17 @@ import com.EQ.userList.User;
 
 
 /**
- * ÁÄÌì¼ÇÂ¼¶Ô»°¿ò
+ * èŠå¤©è®°å½•å¯¹è¯æ¡†
  *
  */
 public class ChatDialog extends JDialog{
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * 
 	 * @param owner
-	 * 		-Õ¹Ê¾ÔÚÄÄ¸ö´°¿ÚÖ®ÉÏ
+	 * 		-å±•ç¤ºåœ¨å“ªä¸ªçª—å£ä¹‹ä¸Š
 	 * @param user
-	 * 		-Õ¹Ê¾ÄÄ¸öÓÃ»§µÄÁÄÌì¼ÇÂ¼
+	 * 		-å±•ç¤ºå“ªä¸ªç”¨æˆ·çš„èŠå¤©è®°å½•
 	 */
 	public ChatDialog(Frame owner, User user) {
 		super(owner, true);
@@ -33,7 +33,7 @@ public class ChatDialog extends JDialog{
 		int y = owner.getY();
 		setBounds(x + 20, y + 20, 400, 350);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setTitle("Óë[" + user + "] ÏûÏ¢¼ÇÂ¼");
+		setTitle("ä¸[" + user + "] æ¶ˆæ¯è®°å½•");
 		JTextArea area = new JTextArea();
 		area.setEditable(false);
 		area.setLineWrap(true);
@@ -41,7 +41,7 @@ public class ChatDialog extends JDialog{
 		area.setWrapStyleWord(true);
 		List<String> logs = ChatLog.readAllLog(user.getIp());
 		if (logs.size() == 0) {
-			area.append("(ÎŞ)");
+			area.append("(æ— )");
 		}else {
 			for(String log:logs) {
 				area.append(log + "\n");

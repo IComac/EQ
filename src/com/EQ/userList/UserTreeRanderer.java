@@ -20,7 +20,7 @@ import javax.swing.tree.TreeCellRenderer;
 import com.EQ.EQ;
 
 /**
- * ÓÃ»§(Ê÷)½ÚµãÃæ°åÀà
+ * ç”¨æˆ·(æ ‘)èŠ‚ç‚¹é¢æ¿ç±»
  *
  */
 public class UserTreeRanderer extends JPanel implements TreeCellRenderer {
@@ -38,21 +38,21 @@ public class UserTreeRanderer extends JPanel implements TreeCellRenderer {
 	}
 
 	/**
-	 * ÓÃ»§(Êı)½ÚµãÃæ°åÀà¹¹Ôì·½·¨
+	 * ç”¨æˆ·(æ•°)èŠ‚ç‚¹é¢æ¿ç±»æ„é€ æ–¹æ³•
 	 * 
 	 * @param open
-	 * 		-½ÚµãÕ¹¿ªÊ±µÄÍ¼±ê
+	 * 		-èŠ‚ç‚¹å±•å¼€æ—¶çš„å›¾æ ‡
 	 * @param closed
-	 * 		-½Úµã¹Ø±ÕÊ±µÄÍ¼±ê
+	 * 		-èŠ‚ç‚¹å…³é—­æ—¶çš„å›¾æ ‡
 	 * @param leaf
-	 * 		-½ÚµãÄ¬ÈÏÍ¼±ê
+	 * 		-èŠ‚ç‚¹é»˜è®¤å›¾æ ‡
 	 */
 	public UserTreeRanderer(Icon open, Icon closed, Icon leaf) {
 		openIcon = open;
 		closedIcon = closed;
 		leafIcon = leaf;
 		setBackground(new Color(0xF5B9BF));
-		label.setFont(new Font("ËÎÌå", Font.BOLD, 14));
+		label.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
 		URL trueUrl = EQ.class.getResource("/image/chexkBoxImg/CheckBoxTrue.png");
 		label.setSelectedIcon(new ImageIcon(trueUrl));
 		URL falseUrl = EQ.class.getResource("/image/chexkBoxImg/CheckBoxFalse.png");
@@ -66,17 +66,17 @@ public class UserTreeRanderer extends JPanel implements TreeCellRenderer {
 	/**
 	 * @param tree
 	 * @param value
-	 * 		-µ±Ç°Ê÷µ¥Ôª¸ñµÄÖµ
+	 * 		-å½“å‰æ ‘å•å…ƒæ ¼çš„å€¼
 	 * @param selected
-	 * 		-µ¥Ôª¸ñÒÑÑ¡Ôñ
+	 * 		-å•å…ƒæ ¼å·²é€‰æ‹©
 	 * @param expanded
-	 * 		-ÊÇ·ñµ±Ç°À©Õ¹¸Ã½Úµã
+	 * 		-æ˜¯å¦å½“å‰æ‰©å±•è¯¥èŠ‚ç‚¹
 	 * @param leaf
-	 * 		-¸Ã½ÚµãÊÇ·ñÎªÒ¶½Úµã
+	 * 		-è¯¥èŠ‚ç‚¹æ˜¯å¦ä¸ºå¶èŠ‚ç‚¹
 	 * @param row
-	 * 		-·ÅÖÃÎ»ÖÃ
+	 * 		-æ”¾ç½®ä½ç½®
 	 * @param hasFocus
-	 * 		-¸Ã½ÚµãÊÇ·ñÓµÓĞ½¹µã
+	 * 		-è¯¥èŠ‚ç‚¹æ˜¯å¦æ‹¥æœ‰ç„¦ç‚¹
 	 */
 	public Component getTreeCellRendererComponent(JTree tree, Object value,
 			boolean selected, boolean expanded, boolean leaf, int row,
@@ -123,7 +123,7 @@ public class UserTreeRanderer extends JPanel implements TreeCellRenderer {
 	}
 
 	/**
-	 * »ñÈ¡ÌáÊ¾ÄÚÈİ
+	 * è·å–æç¤ºå†…å®¹
 	 */
 	public String getToolTipText() {
 		return tipText;

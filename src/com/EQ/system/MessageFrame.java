@@ -11,7 +11,7 @@ import javax.swing.WindowConstants;
 import javax.swing.border.BevelBorder;
 
 /**
- * Èº·¢ÏûÏ¢´°¿Ú
+ * ç¾¤å‘æ¶ˆæ¯çª—å£
  *
  */
 public class MessageFrame extends JFrame {
@@ -31,11 +31,11 @@ public class MessageFrame extends JFrame {
 		setBounds(100, 100, 307, 383);
 		setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		setAlwaysOnTop(true);
-		setTitle("Èº·¢ÏûÏ¢");
+		setTitle("ç¾¤å‘æ¶ˆæ¯");
 		setVisible(true);
 
 		getContentPane().add(stateLabel, BorderLayout.SOUTH);
-		stateLabel.setText("ÇëÉÔµÈÏûÏ¢½á¹û¡£");
+		stateLabel.setText("è¯·ç¨ç­‰æ¶ˆæ¯ç»“æœã€‚");
 
 		getContentPane().add(scrollPane);
 		textPane = new JTextPane();
@@ -46,12 +46,12 @@ public class MessageFrame extends JFrame {
 	}
 
 	/**
-	 * Ìí¼ÓÏûÏ¢ÄÚÈİ
+	 * æ·»åŠ æ¶ˆæ¯å†…å®¹
 	 * 
 	 * @param message
-	 * 		ÏûÏ¢ÄÚÈİ
+	 * 		æ¶ˆæ¯å†…å®¹
 	 * @param success
-	 * 		ÊÇ·ñ³É¹¦·¢ËÍÏûÏ¢
+	 * 		æ˜¯å¦æˆåŠŸå‘é€æ¶ˆæ¯
 	 */
 	public void addMessage(String message, boolean success) {
 		textPane.setEditable(true);
@@ -71,10 +71,10 @@ public class MessageFrame extends JFrame {
 	}
 
 	/**
-	 * ÉèÖÃ×´Ì¬À¸ÏûÏ¢
+	 * è®¾ç½®çŠ¶æ€æ æ¶ˆæ¯
 	 * 
 	 * @param str
-	 * 		-×´Ì¬À¸ÏûÏ¢
+	 * 		-çŠ¶æ€æ æ¶ˆæ¯
 	 */
 	public void setStateBarInfo(String str) {
 		stateLabel.setText(str);

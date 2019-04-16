@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import com.EQ.userList.User;
 
 /**
- * Êı¾İ¿â½Ó¿ÚÀà£¬´ËÀàÊ¹ÓÃÎ¢ĞÍÊı¾İ¿â¡ª¡ªDerby£¬ËùÓĞÊı¾İ¿âÎÄ¼ş»á±£´æÔÚÏîÄ¿¸ùÄ¿Â¼ÏÂ×Ô¶¯Éú³ÉµÄ"db_EQ"ÎÄ¼ş¼ĞÖĞ
+ * æ•°æ®åº“æ¥å£ç±»ï¼Œæ­¤ç±»ä½¿ç”¨å¾®å‹æ•°æ®åº“â€”â€”Derbyï¼Œæ‰€æœ‰æ•°æ®åº“æ–‡ä»¶ä¼šä¿å­˜åœ¨é¡¹ç›®æ ¹ç›®å½•ä¸‹è‡ªåŠ¨ç”Ÿæˆçš„"db_EQ"æ–‡ä»¶å¤¹ä¸­
  */
 public class Dao {
 	private static final String drive = 
@@ -39,17 +39,17 @@ public class Dao {
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Êı¾İ¿âÁ¬½ÓÒì³££¬»òÕß±¾Èí¼şÒÑ¾­ÔËĞĞ¡£");
+			JOptionPane.showMessageDialog(null, "æ•°æ®åº“è¿æ¥å¼‚å¸¸ï¼Œæˆ–è€…æœ¬è½¯ä»¶å·²ç»è¿è¡Œã€‚");
 			System.exit(0);
 		}
 	}
 
 	/**
-	 * ²âÊÔÊı¾İ¿âÊÇ·ñ´æÔÚ
-	 * @return Êı¾İ¿âÊÇ·ñ´æÔÚ
+	 * æµ‹è¯•æ•°æ®åº“æ˜¯å¦å­˜åœ¨
+	 * @return æ•°æ®åº“æ˜¯å¦å­˜åœ¨
 	 */
 	private boolean dbExists() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		boolean bExists = false;
 		File dbFileDir = new File("db_EQ");
 		if (dbFileDir.exists()) {
@@ -59,10 +59,10 @@ public class Dao {
 	}
 
 	/**
-	 * ´´½¨Êı¾İ±í¸ñ
+	 * åˆ›å»ºæ•°æ®è¡¨æ ¼
 	 */
 	private void createTable() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		String createUserSql = "CREATE TABLE tb_users ("
 				+ "ip varchar(16) primary key," + "host varchar(30),"
 				+ "name varchar(20)," + "tooltip varchar(50),"
@@ -83,8 +83,8 @@ public class Dao {
 	}
 
 	/**
-	 * »ñÈ¡DAO¶ÔÏó
-	 * @return DAO¶ÔÏó
+	 * è·å–DAOå¯¹è±¡
+	 * @return DAOå¯¹è±¡
 	 */
 	public static Dao getDao() {
 		if (dao == null) 
@@ -93,8 +93,8 @@ public class Dao {
 	}
 
 	/**
-	 * »ñÈ¡ËùÓÃÓÃ»§
-	 * @return »ñÈ¡ËùÓĞÓÃ»§µÄ¼¯ºÏ
+	 * è·å–æ‰€ç”¨ç”¨æˆ·
+	 * @return è·å–æ‰€æœ‰ç”¨æˆ·çš„é›†åˆ
 	 */
 	public List<User> getUsers() {
 		List<User> users = new ArrayList<User>();
@@ -119,10 +119,10 @@ public class Dao {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨IPµÄÓÃ»§
+	 * è·å–æŒ‡å®šIPçš„ç”¨æˆ·
 	 * @param ip 
-	 * 		-IPµØÖ·
-	 * @return ²é¿´µÄÓÃ»§ĞÅÏ¢
+	 * 		-IPåœ°å€
+	 * @return æŸ¥çœ‹çš„ç”¨æˆ·ä¿¡æ¯
 	 */
 	public User getUser(String ip) {
 		String sql = "select * from tb_users where ip=?";
@@ -148,9 +148,9 @@ public class Dao {
 	}
 
 	/**
-	 * Ìí¼ÓÓÃ»§
+	 * æ·»åŠ ç”¨æˆ·
 	 * @param user 
-	 * 		-±»Ìí¼ÓµÄÓÃ»§
+	 * 		-è¢«æ·»åŠ çš„ç”¨æˆ·
 	 */
 	public void addUser(User user) {
 		try {
@@ -171,9 +171,9 @@ public class Dao {
 	}
 
 	/**
-	 * ĞŞ¸ÄÓÃ»§
+	 * ä¿®æ”¹ç”¨æˆ·
 	 * @param user 
-	 * 		-±»ĞŞ¸ÄµÄÓÃ»§
+	 * 		-è¢«ä¿®æ”¹çš„ç”¨æˆ·
 	 */
 	public void updateUser(User user) {
 		try {
@@ -194,9 +194,9 @@ public class Dao {
 	}
 
 	/**
-	 * É¾³ıÓÃ»§
+	 * åˆ é™¤ç”¨æˆ·
 	 * @param user 
-	 * 		-±»É¾³ıµÄÓÃ»§
+	 * 		-è¢«åˆ é™¤çš„ç”¨æˆ·
 	 */
 	public void delUser(User user) {
 		try {
@@ -213,9 +213,9 @@ public class Dao {
 	}
 
 	/**
-	 * ¸üĞÂÖ÷´°¿ÚÔÚÆÁÄ»ÖĞÏÔÊ¾µÄÎ»ÖÃ
+	 * æ›´æ–°ä¸»çª—å£åœ¨å±å¹•ä¸­æ˜¾ç¤ºçš„ä½ç½®
 	 * @param location 
-	 * 		-ÆÁÄ»Î»ÖÃ¶ÔÏó
+	 * 		-å±å¹•ä½ç½®å¯¹è±¡
 	 */
 	public void updateLocation(Rectangle location) {
 		String sql = "update tb_location set xLocation=?,yLocation=?,width=?,height=?";
@@ -234,8 +234,8 @@ public class Dao {
 	}
 
 	/**
-	 * »ñÈ¡´°¿ÚÎ»ÖÃ
-	 * @return ÆÁÄ»Î»ÖÃ¶ÔÏó
+	 * è·å–çª—å£ä½ç½®
+	 * @return å±å¹•ä½ç½®å¯¹è±¡
 	 */
 	public Rectangle getLocation() {
 		Rectangle rec = new Rectangle(100, 0, 240, 500);
@@ -259,10 +259,10 @@ public class Dao {
 	}
 
 	/**
-	 * Ìí¼Ó´°¿ÚÄ¬ÈÏÎ»ÖÃ
+	 * æ·»åŠ çª—å£é»˜è®¤ä½ç½®
 	 */
 	private void addDefLocation() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		String sql = "insert into tb_location values(?,?,?,?)";
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
@@ -281,10 +281,10 @@ public class Dao {
 	}
 
 	/**
-	 * Ê¹ÓÃ±¾»úµÄIPµØÖ·´´½¨Ä¬ÈÏµÄÓÃ»§£¬²¢½«ÆäÌí¼Óµ½Êı¾İ¿âÖĞ
+	 * ä½¿ç”¨æœ¬æœºçš„IPåœ°å€åˆ›å»ºé»˜è®¤çš„ç”¨æˆ·ï¼Œå¹¶å°†å…¶æ·»åŠ åˆ°æ•°æ®åº“ä¸­
 	 */
 	private void addDefuser() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		try {
 			InetAddress local = InetAddress.getLocalHost();
 			User user = new User();
